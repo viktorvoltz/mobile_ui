@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:management_ui/constants/colors.dart';
 import 'package:management_ui/widgets/Body1.dart';
+import 'package:management_ui/widgets/Body2.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
             Container(
                 height: 45,
                 width: 50,
-                margin: EdgeInsets.only(left: 5),
+                margin: EdgeInsets.only(left: 0),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: Image.asset('assets/images/spacex.jpg'))),
@@ -35,6 +36,8 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Body1(),
+          SizedBox(height: 10,),
+          Body2(),
         ],
       )
     );
