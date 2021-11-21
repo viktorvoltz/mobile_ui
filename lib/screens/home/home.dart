@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                     child: Image.asset('assets/images/spacex.jpg'))),
             SizedBox(width: 20),
             Text(
-              'Welcome Voltz!',
+              'Welcome, Voltz!',
               style: TextStyle(color: Colors.black),
             ),
           ],
