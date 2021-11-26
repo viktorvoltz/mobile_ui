@@ -13,6 +13,6 @@ class Task {
 const List<Task> task = <Task>[
   const Task(title: 'Personal', icon: Icons.person, theme: kYellow, left: '3 left', done: '1 done'),
   const Task(title: 'Work', icon: Icons.work, theme: kRed, left: '2 left', done: '8 done'),
-  const Task(title: 'Health', icon: Icons.local_hospital, theme: kBlueDark, left: '1 left', done: '1 done'),
+  const Task(title: 'Health', icon: Icons.health_and_safety, theme: kBlue, left: '1 left', done: '1 done'),
   //const Task(title: 'Add', icon: Icons.add, theme: kYellowLight),
 ];

@@ -109,7 +109,53 @@ class Body2 extends StatelessWidget {
                   ),
               ),
             ],
-          )
+          ),
+          SizedBox(height: 20,),
+          Container(
+                margin: EdgeInsets.only(left: 15),
+                padding: EdgeInsets.only(left: 10, top: 5),
+                height: 150,
+                width: 180,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15), color: task[2].theme),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(task[2].icon, color: kBlueDark, size: 27,),
+                      SizedBox(height: 40,),
+                      Text(task[2].title, style: TextStyle(fontWeight: FontWeight.w700, color: Colors.black, fontSize: 16),),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 15),
+                            alignment: Alignment.center,
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: kBlueDark,
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: Text(task[2].left, style: TextStyle(color: task[2].theme, fontWeight: FontWeight.w600),),
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            margin: EdgeInsets.only(top: 5),
+                            alignment: Alignment.center,
+                            height: 30,
+                            width: 70,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)
+                            ),
+                            child: Text(task[2].done, style: TextStyle(color: kBlue, fontWeight: FontWeight.w600),),
+                          )
+                        ],
+                      )
+
+                    ],
+                  ),
+              ),
         ],
       ),
     );
