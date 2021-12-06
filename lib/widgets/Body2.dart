@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:management_ui/constants/colors.dart';
 import 'package:management_ui/models/model.dart';
+import 'package:dotted_border/dotted_border.dart';
 
 class Body2 extends StatelessWidget {
   //const Body2({Key? key}) : super(key: key);
@@ -160,72 +161,100 @@ class Body2 extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Container(
-            margin: EdgeInsets.only(left: 15),
-            padding: EdgeInsets.only(left: 10, top: 5),
-            height: 150,
-            width: 180,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15), color: task[2].theme),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  task[2].icon,
-                  color: kBlueDark,
-                  size: 27,
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  task[2].title,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                      fontSize: 16),
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+          Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 15),
+                padding: EdgeInsets.only(left: 10, top: 5),
+                height: 150,
+                width: 180,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: task[2].theme),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 15),
-                      alignment: Alignment.center,
-                      height: 30,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          color: kBlueDark,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Text(
-                        task[2].left,
-                        style: TextStyle(
-                            color: task[2].theme, fontWeight: FontWeight.w600),
-                      ),
+                    Icon(
+                      task[2].icon,
+                      color: kBlueDark,
+                      size: 27,
                     ),
-                    SizedBox(width: 10),
-                    Container(
-                      margin: EdgeInsets.only(top: 5),
-                      alignment: Alignment.center,
-                      height: 30,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Text(
-                        task[2].done,
-                        style: TextStyle(
-                            color: kBlue, fontWeight: FontWeight.w600),
-                      ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      task[2].title,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black,
+                          fontSize: 16),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: 15),
+                          alignment: Alignment.center,
+                          height: 30,
+                          width: 70,
+                          decoration: BoxDecoration(
+                              color: kBlueDark,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Text(
+                            task[2].left,
+                            style: TextStyle(
+                                color: task[2].theme,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Container(
+                          margin: EdgeInsets.only(top: 5),
+                          alignment: Alignment.center,
+                          height: 30,
+                          width: 70,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Text(
+                            task[2].done,
+                            style: TextStyle(
+                                color: kBlue, fontWeight: FontWeight.w600),
+                          ),
+                        )
+                      ],
                     )
                   ],
-                )
-              ],
-            ),
+                ),
+              ),
+              SizedBox(width: 20),
+              Container(
+                height: 150,
+                width: 180,
+                child: _dottedBorder(),
+              ),
+            ],
           ),
         ],
       ),
     );
   }
+}
+
+Widget _dottedBorder() {
+  return DottedBorder(
+    borderType: BorderType.RRect,
+    radius: Radius.circular(20),
+    dashPattern: [10, 20],
+    color: Colors.grey,
+    strokeWidth: 2,
+    child: Center(
+      child: Text(
+        '+ Add',
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+      ),
+    ),
+  );
 }
 
 class GridCard extends StatelessWidget {
@@ -266,11 +295,7 @@ class GridCard extends StatelessWidget {
   }
 }
 
-Widget containerCards(
-  Color iconColor,
-  Color textColor,
-  int index,
-) {
+Widget containerCards(Color iconColor, Color textColor, int index) {
   return Container(
     margin: EdgeInsets.only(left: 15),
     padding: EdgeInsets.only(left: 10, top: 5),
